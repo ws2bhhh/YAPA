@@ -39,6 +39,8 @@ def connect(serial: str):
     if serial is None:
         raise ValueError("need device serial")
     _set_serial(serial)
+    command = ["adb", "connect", config.SERIAL]
+    subprocess.run(command)
     # _set_resolution()
     # _init_scrcpy()
 
